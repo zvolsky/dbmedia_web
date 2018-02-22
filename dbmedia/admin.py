@@ -9,11 +9,12 @@ class Form_Obrazek(forms.ModelForm):
         model = Obrazek
         exclude = []
         widgets = {
-            'obrazek': DBAdminClearableFileInput
+            'obrazek': DBAdminClearableFileInput,
+            'obrazek2': DBAdminClearableFileInput,
         }
 
-class ConsoleAdmin(admin.ModelAdmin):
+class ObrazekAdmin(admin.ModelAdmin):
     form = Form_Obrazek
 
 
-admin.site.register(Obrazek)
+admin.site.register(Obrazek, ObrazekAdmin)
